@@ -24,7 +24,8 @@
 ## SOLUTIONS THAT DID NOT WORK
 
 ### BF16
-#### The team though full finetuning the mixed trained precision fp16 trained LM on pure language modeling using mixed precision bf16 would help. Found out that this was detrimental performance (loss ends up high), eventhough it helped with stability
+#### The team considered the possibility that starting with a bf16 adaptation, which involves fully fine-tuning a mixed precision fp16 trained language model exclusively for pure language modeling using mixed precision bf16, might be beneficial. While it did provide some improvement in terms of stability, it turned out to be unnecessary. In fact, it had a slightly adverse effect on performance, as the loss initially started at a higher level and eventually settled at a slightly elevated level.
+
 
 ### Heavier Weight Decay
 #### The team applied heavier weight decay to prevent weights from becoming too large ("Prevent them from going far from zero"). Did not work, since the loss was still diverging
