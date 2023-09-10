@@ -15,6 +15,11 @@
 
 #### The impact of this phenomenon was most pronounced in the initial layers, particularly in the outer projection activations within the MLP block, as well as in the output (O) of the attention block. Interestingly, the components Q, K, and V did not exhibit significant susceptibility to these effects.
 
+#### Activations Exploding (BF16 run)
+![Alt text](../assets/BF16.png)
+
+#### Activations Exploding (FP16 run)
+![Alt text](../assets/FP16.png)
 
 ## SOLUTIONS THAT DID NOT WORK
 
@@ -57,7 +62,7 @@
 ### No biases in nn.Linear
 
 ### Keep Calm and Decrease LR
-#### Lessons Learning: Bigger batch allows bigger LR which means faster loss descreases. Hyperparameters: WarmUp Steps, Batch Size, z_loss weight and lr
+#### Lessons Learned: Bigger batch allows bigger LR which means faster loss descreases. Hyperparameters: WarmUp Steps, Batch Size, z_loss weight and lr
 
 ### Training Both VL Backbones is Important
 #### OPT > GPT-NEO > GPT2 > BLOOM
@@ -69,7 +74,7 @@
 ### Deep Models are Unstable
 #### A shallow and wide LMs yeild less spiky training run, than deep and narrow  LMs. 
 #### Would be Interesting to see also performance (Will try this with GPT2 style autoregressive and report back)
-
+![Alt text](../assets/deep_narrow.png)
 
 ## BUGS/MISTAKES
 
