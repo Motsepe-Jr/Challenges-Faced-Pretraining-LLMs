@@ -1,4 +1,4 @@
-# Meta Loss Divergence Learnings from Training OPT model
+# Meta Numerical Instabilities Learnings from Training OPT model
 
 # MAIN CHALLENGE
 #### GradNorm/ActivationNorm Explode and Loss Scale divergence
