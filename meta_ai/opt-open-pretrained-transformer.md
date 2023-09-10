@@ -68,8 +68,10 @@
 ##### * In some cases the team had to roll back quite significantly, to avoid the spikes.
 
 ### BF-16 
+##### * Using BF-16 helped a lot to improve to overcome the numerical instabilities the team faced. 
 
 # LEARNINGS
+##### Spend time on datanesuring data quality.
 ##### Start small and scale, starting small enable you to avoid sotly mistakes as well see what works and what does not work.
 
 # BUG/MISTAKES
