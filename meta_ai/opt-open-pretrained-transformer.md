@@ -45,15 +45,13 @@
 
 #### Hyperparameters Tuning After Run 11 (Instabilities): 
 #### Since the above hyperparameters, did not work, the team decided to:
-##### * Remove extra layer nors from NormFormer setup
+##### * Remove extra layer norms from NormFormer setup
 ##### * weight decay to 1.0
 ##### * clipping 1.0
 ##### * max lr of 1.2e-4
 ##### * adam beta2 = 0.95
 ##### * removed embedding scalings
 ##### * Gaussian init for learned positional embeddings (instead of sinu-init)
-
-
 
 ## SOLUTIONS THAT WORKED
 
@@ -68,10 +66,10 @@
 ##### * In some cases the team had to roll back quite significantly, to avoid the spikes.
 
 ### BF-16 
-##### * Using BF-16 helped a lot to improve to overcome the numerical instabilities the team faced. 
+##### * Using BF-16 helped a lot to overcome the numerical instabilities the team faced. 
 
 # LEARNINGS
-##### Spend time on datanesuring data quality.
+##### Spend time on data, and data quality.
 ##### Start small and scale, starting small enable you to avoid sotly mistakes as well see what works and what does not work.
 
 # BUG/MISTAKES
