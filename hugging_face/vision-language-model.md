@@ -1,6 +1,7 @@
-# Hugging Face Loss Divergences Learnings from Training Vision Language Model
+# HuggingFace Loss Divergences Learnings from Training Vision Language Model
 
 ##### Note: This is based on an internal note from hugging face team on what they have learned from training a VL model. The report only focused on the loss divergences learnings rather than sharing the model details (eg Num of Params).  
+##### Note: Dataset used to Full finetine the VL model was not mentioned in the reports. 
 
 ##### Hugging Face Team trained a vision-language model by combining pretrained backbones (Vision Encoder backbone and  Langauge Model backbone) with newly intialised parameters. The backbones were freezed and only the newly added parameters were trainined. Adding these parameters turned out to be a stability nightmares, as the team faced loss divergence when training in mixed precision bf16 at the an early stage of 2-3 billion scale. 
 
