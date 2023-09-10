@@ -1,4 +1,4 @@
-# Pretraining Challenges in Language Models
+# Pretraining Challenges in Large Language Models
 
 Welcome to the Pretraining Challenges in Language Models open-source project! This repository is dedicated to documenting and addressing various challenges encountered during the pretraining of Large Language Models (LLMs). We aim to provide insights  and best practices for researchers and developers working with LLMs.
 
