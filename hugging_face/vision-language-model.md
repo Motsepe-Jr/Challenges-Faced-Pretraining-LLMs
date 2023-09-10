@@ -1,8 +1,8 @@
 # Hugging Face Loss Divergences Learnings from Training Vision Language Model
 
-#### Note: This is based on an internal note from hugging face team on what they have learned from training a VL model. The report only focused on the loss divergences learnings rather than sharing the model details (eg Num of Params).  
+##### Note: This is based on an internal note from hugging face team on what they have learned from training a VL model. The report only focused on the loss divergences learnings rather than sharing the model details (eg Num of Params).  
 
-#### Hugging Face Team trained a vision-language model by combining pretrained backbones (Vision Encoder backbone and  Langauge Model backbone) with newly intialised parameters. The backbones were freezed and only the newly added parameters were trainined. Adding these parameters turned out to be a stability nightmares, as the team faced loss divergence when training in mixed precision bf16 at the an early stage of 2-3 billion scale. 
+##### Hugging Face Team trained a vision-language model by combining pretrained backbones (Vision Encoder backbone and  Langauge Model backbone) with newly intialised parameters. The backbones were freezed and only the newly added parameters were trainined. Adding these parameters turned out to be a stability nightmares, as the team faced loss divergence when training in mixed precision bf16 at the an early stage of 2-3 billion scale. 
 
 
 ![Alt text](../assets/hugging_face_loss_divergence.png)
@@ -51,8 +51,7 @@
 
 ### LayerNorms on the Q and K projections
 #### Adding layer normalization (LN(Q) AND LN(K)) to the Q and K projection as inspird by the Scaling VIT to 22B parameter paper. 
-#### The team assumed that explosion of the output from Q and K was not a problem, since the softmax would bring them down to the range of 0 and 1. But this wasnt the case.
-#### The team also tried L2 norm L2_NORM(Q) AND L2_NORM(K) and it yielded similar stabilisation to the LN but led to lower performance
+#### The team assumed that explosion of the output from Q and K was not a problem, since the softmax would bring them down to the range of 0 and 1. But this wasnt the case. They also tried L2 norm L2_NORM(Q) AND L2_NORM(K) and it yielded similar stabilisation to the LN but led to lower performance
 
 ### Unfreeze LayerNorm from the frozen LM backbone 
 #### This helped the diverging models to recover, it helped, but the team demmed it as unnecessary. 
