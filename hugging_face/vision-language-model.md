@@ -72,17 +72,17 @@
 
 ## LEARNINGS
 
-### Deep Models are Unstable
+#### Deep Models are Unstable
 ##### A shallow and wide LMs yeild less spiky training run, than deep and narrow  LMs. 
 ##### Would be Interesting to see also performance (Will try this with GPT2 style autoregressive and report back)
 ![Alt text](../assets/deep_narrow.png)
 
 ## BUGS/MISTAKES
 
-### Not using shared env
+#### Not using shared env
 ##### Could not reproduce certain evaluation because the team used someone else conda env. LIBRARY VERSION IS IMPORTANT 
 
-### Bugs
+#### Bugs
 ##### Create a lot of tests and have checks in your code (raise errors or assert)
 
 
