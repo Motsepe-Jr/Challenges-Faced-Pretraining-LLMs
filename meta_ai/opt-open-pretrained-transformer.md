@@ -35,7 +35,7 @@
 
 #### Inward NormFactor 
 ##### * if the Q and K dim are large, then the matmul between the two make the output to blow up, therefore the norm factor wont make a huge difference
-##### * The team moved the norm factor inward: n * (A dot B) === (sqrt(n) * A) dot (sqrt(n) * B) # Suppose to improve numerical stability 
+##### * The team moved the norm factor inward: n * (A dot B) === (sqrt(n) * A) dot (sqrt(n) * B) # Suppose to improve numerical instabilities. 
 
 #### Removed Gelu and Used Relu
 
