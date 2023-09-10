@@ -40,7 +40,7 @@
 ## SOLUTIONS THAT DID NOT WORK
 
 ### Chronological Sorted Datasets 
-### Curriculum Learning: Paper: https://arxiv.org/abs/2101.10382
+#### Curriculum Learning: Paper: https://arxiv.org/abs/2101.10382
 #####  The large gap between training and validation losses, as depicted in the above curve, indicated that validation set consisted of the data from the future, whereas the training dataset at an early stage consisted of older datasets.
 ##### The dataset was shuffled uniformly on the shard level, which led to a faster improments in the validation loss. 
 ##### Note: The team meantioned that they were unable to ascertain if the chronological order of the data had a negative impact or it was other factors. 
