@@ -70,7 +70,7 @@
 
 # LEARNINGS
 ##### Spend time on data, and data quality.
-##### Start small and scale, starting small enable you to avoid sotly mistakes as well see what works and what does not work.
+##### Start small and scale, starting small enable you to avoid costly mistakes and allows you see what works and what does not work.
 
 # BUG/MISTAKES
 #### Data Artifacts: Added extract escape characters in the deduplication pipeline. The loss ws decreasing only to find out it was predicting escape characters.  
