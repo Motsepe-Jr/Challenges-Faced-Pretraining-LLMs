@@ -1,23 +1,23 @@
 # Meta Loss Divergence Learnings from Training OPT model
 
 # MAIN CHALLENGE
-#### GradNorm/ActivationNorm Explode and Loss Scale divergence/plateuas
+#### GradNorm/ActivationNorm Explode and Loss Scale divergence
 ![Alt text](../assets/facebook_grad.png)
 
 ## SOLUTIONS THAT DID NOT WORK
 
-### Weight Decay
+#### Weight Decay
 ##### The team increased weight decay to 0.1 from 0.01, loss plateaus
 
-### Adapting to GPT-3 /Megatron-LM Hyperparameters
+#### Adapting to GPT-3 /Megatron-LM Hyperparameters
 ##### * Set Grad Norm Clipping to 1.0
 ##### * reduced Adam beta2 from 0.98 to 0.95
 ##### * increased Adam epsilon from 1e-8 to 1e-6
 
-### Doubled Batch Size
+#### Doubled Batch Size
 ##### * Using large batch size did not make much difference
 
-### Hyperparameters Tuning After Run 10 (Instabilities)
+#### Hyperparameters Tuning After Run 10 (Instabilities)
 ##### * Moved Weight Decay to 0.05
 ##### * Increased Learning Rate: [The team thought starting with high learning rate is okay, since you can drop it if things start to become unstable]
 ##### * No dropout on embeddings
@@ -27,23 +27,23 @@
 ##### * Learned postional embeddings with sinusoidal init.
 
 
-### Modified the Above Hyperparameter to Stabailise Training
+#### Modified the Above Hyperparameter to Stabailise Training
 ##### * Lowered LR from 3e-4 -> 7.5e-5
 ##### * Lowered gradient clipping from 2.5 to 1.5 NB: clipping stabilised grad norm spikes training but at 4500 - 5500 steps
 ##### * Skipped Batches when grad norm is > 1.0
 
 
-### Inward NormFactor 
+#### Inward NormFactor 
 ##### * if the Q and K dim are large, then the matmul between the two make the output to blow up, therefore the norm factor wont make a huge difference
 ##### * The team moved the norm factor inward: n * (A dot B) === (sqrt(n) * A) dot (sqrt(n) * B) # Suppose to improve numerical stability 
 
-### Removed Gelu and Used Relu
+#### Removed Gelu and Used Relu
 
-### Training with FP-16 (Not mixed precesion)
+#### Training with FP-16 (Not mixed precesion)
 ##### * To avoid overflow/underflow used loss scaing to preserve small gradients values
 ##### * reference to learn more about loss scaling: https://www.graphcore.ai/posts/training-large-models-more-stably-with-automatic-loss-scaling
 
-### Hyperparameters Tuning After Run 11 (Instabilities): 
+#### Hyperparameters Tuning After Run 11 (Instabilities): 
 #### Since the above hyperparameters, did not work, the team decided to:
 ##### * Remove extra layer nors from NormFormer setup
 ##### * weight decay to 1.0
