@@ -17,7 +17,7 @@ Language Models like GPT-3, BERT, and their variants have revolutionized natural
 
 ## Models Covered
 
-We have focused on documenting challenges and solutions for the following pre-trained models:
+We currently documented challenges and solutions for the following pre-trained models:
 
 1. **Meta OPT Model**: [Link to Meta OPT Paper](https://arxiv.org/abs/2205.01068)
 2. **Hugging Face Vision Language Model**: [Link to Hugging Face Vision LM](https://huggingface.co/HuggingFaceM4)
